@@ -38,3 +38,14 @@
 .girar {
 	transform: rotate(45deg);
 }
+
+.barra-progresso {
+	height: 30px;
+	width: 700px;
+	border: 1px solid black;	
+}
+
+.progresso {
+	height: 100%;
+	background-color: red;
+}
