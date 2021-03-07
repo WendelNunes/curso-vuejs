@@ -10,12 +10,21 @@
 
 <script>
 export default {
-  props: ["nome"],
+  props: {
+    nome: {
+      type: String,
+      // required: true
+      //   default: function () {
+      //     return Array(10).fill(0).join(",");
+      //   },
+      default: "Anônimo",
+    },
+  },
   methods: {
-      inverterNome(){
-          return this.nome.split('').reverse().join('')
-      }
-  }
+    inverterNome() {
+      return this.nome.split("").reverse().join("");
+    },
+  },
 };
 </script>
 
