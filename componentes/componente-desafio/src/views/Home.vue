@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Menu from "./Menu.vue";
-import Toolbar from "./Toolbar.vue";
-import Content from "./Content.vue";
-import Footer from "./Footer.vue";
+import Menu from "@/components/template/Menu.vue";
+import Toolbar from "@/components/template/Toolbar.vue";
+import Content from "@/components/template/Content.vue";
+import Footer from "@/components/template/Footer.vue";
 
 export default {
   components: {

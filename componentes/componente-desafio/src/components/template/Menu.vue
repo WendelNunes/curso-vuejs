@@ -2,9 +2,9 @@
   <v-navigation-drawer app>
     <v-toolbar flat>
       <v-list>
-        <v-list-tile>
-          <v-list-tile-title class="title"> Menu </v-list-tile-title>
-        </v-list-tile>
+        <v-list-item class="title">
+          <v-list-item-title class="title"> Menu </v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-toolbar>
 
