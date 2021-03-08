@@ -5,10 +5,17 @@
     <p>
       Nome do Usuário: <strong>{{ inverterNome() }}</strong>
     </p>
+    <p>
+      Idade do usuário <strong>{{ idade }}</strong>
+    </p>
+    <button @click="reiniciarNome">Reiniciar Nome</button>
+    <button @click="reiniciarFn">Reiniciar Nome (Callback)</button>
   </div>
 </template>
 
 <script>
+import barramento from '@/barramento'
+
 export default {
   props: {
     nome: {
@@ -19,12 +26,23 @@ export default {
       //   },
       default: "Anônimo",
     },
+    reiniciarFn: Function,
+    idade: Number,
   },
   methods: {
     inverterNome() {
       return this.nome.split("").reverse().join("");
     },
+    reiniciarNome() {
+      // this.nome = "Pedro";
+      this.$emit("nomeMudou", "Pedro");
+    },
   },
+  created(){
+    barramento.quandoIdadeMudar(idade => {
+      this.idade = idade;
+    })
+  }
 };
 </script>
 
