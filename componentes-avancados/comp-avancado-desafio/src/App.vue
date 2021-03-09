@@ -13,9 +13,7 @@
     </span>
     <keep-alive>
       <component :is="component">
-        <p slot="vermelho">Conteúdo do Componente <strong>Vermelho</strong></p>
-        <p slot="verde">Conteúdo do Componente <strong>Verde</strong></p>
-        <p slot="azul">Conteúdo do Componente <strong>Azul</strong></p>
+        <p slot="conteudo">Conteúdo do Componente <strong>{{ component }}</strong></p>
       </component>
     </keep-alive>
   </div>

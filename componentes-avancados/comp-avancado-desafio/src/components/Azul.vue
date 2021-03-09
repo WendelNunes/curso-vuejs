@@ -1,6 +1,6 @@
 <template>
     <div class="caixa azul">
-        <slot name="azul"></slot>
+        <slot name="conteudo"></slot>
     </div>
 </template>
 
