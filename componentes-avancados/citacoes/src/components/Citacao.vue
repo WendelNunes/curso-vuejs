@@ -9,7 +9,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style scoped>
@@ -21,6 +23,6 @@ export default {};
 }
 
 .autor {
-    float: right;
+  float: right;
 }
 </style>
