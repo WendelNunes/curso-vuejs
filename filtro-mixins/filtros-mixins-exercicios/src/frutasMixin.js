@@ -11,4 +11,7 @@ export default {
             this.fruta = "";
         },
     },
+    created() {
+        console.log("Created - Frutas Mixin!");
+    },
 }

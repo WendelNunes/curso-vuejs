@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>{{ global }}</h1>
     <ul>
       <li v-for="fruta in frutas" :key="fruta">{{ fruta }}</li>
     </ul>
@@ -9,9 +10,10 @@
 
 <script>
 import frutasMixin from "./frutasMixin.js";
+import usuarioMixin from "./usuarioMixin.js";
 
 export default {
-  mixins: [frutasMixin],
+  mixins: [frutasMixin, usuarioMixin],
 };
 </script>
 

@@ -43,6 +43,9 @@ export default {
     };
   },
   methods: {},
+  created() {
+    console.log("Created - App.vue!");
+  },
 };
 </script>
 
