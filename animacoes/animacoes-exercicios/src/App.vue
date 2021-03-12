@@ -9,6 +9,10 @@
     <transition name="fade">
       <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
     </transition>
+
+    <transition name="slide">
+      <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
+    </transition>
   </div>
 </template>
 
@@ -44,9 +48,32 @@ export default {
   transition: opacity 2s;
 }
 
-/* NAO PRECISA USAR ESTAS CLASSES POR PADRAO O OPACITY E 1 */
+/* NAO PRECISA USAR ESTAS CLASSES POR PADRAO O OPACITY E 1 
 .fade-enter-to,
 .fade-leave {
   opacity: 1;
+} 
+*/
+
+@keyframes slide-in {
+  from {
+    transform: translateY(40px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+.slide-enter-active {
+  animation: slide-in 2s ease;
 }
 </style>
