@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="container-fluid">
     <h1>Animações</h1>
-    <hr />
+    <!-- <hr />
     <b-button variant="primary" class="mb-4" @click="exibir = !exibir"
       >Mostrar Mensagem</b-button
-    >
+    > -->
 
     <!-- <transition name="fade" appear>
       <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
@@ -21,7 +21,7 @@
       <b-alert variant="info" show v-show="exibir">{{ msg }}</b-alert>
     </transition> -->
 
-    <hr />
+    <!-- <hr />
 
     <b-select v-model="tipoAnimacao" class="mb-4">
       <option value="fade">Fade</option>
@@ -70,7 +70,16 @@
     </div>
     <transition name="fade" mode="out-in">
       <component :is="componenteSelecionado"></component>
-    </transition>
+    </transition> -->
+    <hr />
+    <b-button @click="adicionarAluno" class="mb-4">Adicionar Aluno</b-button>
+    <transition-group name="slide" tag="div">
+      <b-list-group v-for="(aluno, i) in alunos" :key="aluno">
+        <b-list-group-item @click="removerAluno(i)">{{
+          aluno
+        }}</b-list-group-item>
+      </b-list-group>
+    </transition-group>
   </div>
 </template>
 
@@ -82,6 +91,7 @@ export default {
   components: { AlertaAdvertencia, AlertaInfo },
   data() {
     return {
+      alunos: ["Roberto", "Julia", "Teresa", "Paulo"],
       msg: "Uma mensagem de informação para o usuário!",
       exibir: false,
       exibir2: true,
@@ -91,6 +101,13 @@ export default {
     };
   },
   methods: {
+    adicionarAluno() {
+      const s = Math.random().toString(36).substring(2);
+      this.alunos.push(s);
+    },
+    removerAluno(indice) {
+      this.alunos.splice(indice, 1);
+    },
     animar(el, done, negativo) {
       let rodada = 1;
       const temporazidor = setInterval(() => {
@@ -193,6 +210,8 @@ export default {
 }
 
 .slide-leave-active {
+  position: absolute;
+  width: 100%;
   animation: slide-out 2s ease;
   transition: opacity 2s;
 }
@@ -200,5 +219,9 @@ export default {
 .slide-enter,
 .slide-leave-to {
   opacity: 0;
+}
+
+.slide-move {
+  transition: transform 1s;
 }
 </style>
