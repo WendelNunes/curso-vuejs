@@ -31,6 +31,14 @@ export default {
   //     this.id = to.params.id;
   //   },
   // },
+  beforeRouteEnter(to, from, next) {
+    console.log("dentro do componente => usuário detalhe");
+    // next((vm) => {
+    //   console.log(vm.id);
+    // });
+    const auntenticado = true;
+    auntenticado ? next() : next(false);
+  },
 };
 </script>
 

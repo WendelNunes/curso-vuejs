@@ -3,14 +3,19 @@ import Router from "vue-router"
 import Inicio from "@/components/Inicio"
 import Menu from "@/components/template/Menu"
 import MenuAut from "@/components/template/MenuAut"
-import Usuario from "@/components/Usuario"
-import UsuarioLista from "@/components/UsuarioLista"
-import UsuarioDetalhe from "@/components/UsuarioDetalhe"
-import UsuarioEditar from "@/components/UsuarioEditar"
+// import Usuario from "@/components/usuario/Usuario"
+// import UsuarioLista from "@/components/usuario/UsuarioLista"
+// import UsuarioDetalhe from "@/components/usuario/UsuarioDetalhe"
+// import UsuarioEditar from "@/components/UsuarioEditar"
 
 Vue.use(Router);
 
-export default new Router({
+const Usuario = () => import("@/components/usuario/Usuario");
+const UsuarioLista = () => import("@/components/usuario/UsuarioLista");
+const UsuarioDetalhe = () => import("@/components/usuario/UsuarioDetalhe");
+const UsuarioEditar = () => import("@/components/usuario/UsuarioEditar");
+
+const router = new Router({
     mode: "history",
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
@@ -51,7 +56,11 @@ export default new Router({
                 {
                     path: ":id",
                     component: UsuarioDetalhe,
-                    props: true
+                    props: true,
+                    beforeEnter: (to, from, next) => {
+                        console.log("antes da rota => usuário detalhe");
+                        next();
+                    },
                 },
                 {
                     path: ":id/editar",
@@ -69,3 +78,10 @@ export default new Router({
         }
     ]
 });
+
+router.beforeEach((to, from, next) => {
+    console.log("antes da rota => global");
+    next();
+});
+
+export default router;
