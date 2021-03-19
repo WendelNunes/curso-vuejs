@@ -9,6 +9,11 @@ import Stock from "@/components/stocks/Stock";
 
 export default {
   components: { Stock },
+  computed: {
+    stocks() {
+      return this.$store.getters.stocks;
+    },
+  },
 };
 </script>
 
