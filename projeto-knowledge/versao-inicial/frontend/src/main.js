@@ -4,13 +4,14 @@ import Vue from "vue";
 import App from "@/App";
 
 import "@/config/bootstrap";
+import "@/config/msg";
 import store from "@/config/store";
 import router from "@/config/router";
 
 Vue.config.productionTip = false;
 
 // TEMPORARIO
-require("axios").defaults.headers.common["Authorization"] = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IldlbmRlbCBOdW5lcyBEb25pemV0ZSIsImVtYWlsIjoid2VuZGVsLm51bmVzZG9uaXpldGVAZ21haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTYxNzI3NDUzMiwiZXhwIjoxNjE3NTMzNzMyfQ.-C5lsNqgw4Rx7Yd9eXfD33slFyan6LZh0tcb1A8S9OM";
+require("axios").defaults.headers.common["Authorization"] = "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IldlbmRlbCBOdW5lcyBEb25pemV0ZSIsImVtYWlsIjoid2VuZGVsLm51bmVzZG9uaXpldGVAZ21haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTYxNzMxMzU0MywiZXhwIjoxNjE3NTcyNzQzfQ.PYkXGrAl5NH3sLU9CVjhkuuITlqmQ8gdYedRrEicOS8";
 
 new Vue({
   store,
