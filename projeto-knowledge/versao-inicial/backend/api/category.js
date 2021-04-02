@@ -10,6 +10,7 @@ module.exports = app => {
             return res.status(400).send(msg);
         }
         if (category.id) {
+            console.log(category);
             app.db("categories")
                 .update(category)
                 .where({ id: category.id })
@@ -39,6 +40,8 @@ module.exports = app => {
                 .where({ id: req.params.id })
                 .del();
             existsOrError(rowsDeleted, "Categoria não foi encontrada");
+
+            res.status(204).send();
         } catch (msg) {
             res.status(400).send(msg);
         }
