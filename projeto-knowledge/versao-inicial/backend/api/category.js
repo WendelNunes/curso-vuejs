@@ -10,7 +10,6 @@ module.exports = app => {
             return res.status(400).send(msg);
         }
         if (category.id) {
-            console.log(category);
             app.db("categories")
                 .update(category)
                 .where({ id: category.id })

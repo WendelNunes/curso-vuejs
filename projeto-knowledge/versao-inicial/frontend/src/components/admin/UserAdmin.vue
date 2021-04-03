@@ -115,7 +115,7 @@ export default {
     };
   },
   methods: {
-    loadUsers() {
+      loadUsers() {
       const url = `${baseApiUrl}/users`;
       axios.get(url).then((res) => {
         this.users = res.data;
